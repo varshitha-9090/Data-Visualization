@@ -1,0 +1,29 @@
+---
+title: "assignment 1"
+author: "phani varshitha"
+date: "9/8/2023"
+output:
+  pdf_document: default
+  html_document:
+    df_print: paged
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+university_list = read.csv("C:/Users/Sai Sree Reddy/Downloads/Desktop/universitylist.csv")
+university_list
+mean(university_list$Industry_code_NZSIOC)
+sd(university_list$Industry_code_NZSIOC)
+table(university_list$Variable_name)
+university_list$Industry_code_NZSIOC= mean(university_list$Industry_code_NZSIOC)- sd(university_list$Industry_code_NZSIOC)
+university_list$Industry_code_NZSIOC
+hist(university_list$Value)
+x = university_list$Industry_code_NZSIOC
+y = university_list$Value
+plot(x,y, main = "Area and Length", xlab = "Area", ylab = "Length")
+
+```
